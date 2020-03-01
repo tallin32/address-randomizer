@@ -1,0 +1,1 @@
+export const SERVICE_BASE_IDENTIFIER = Symbol("ServiceBase")
