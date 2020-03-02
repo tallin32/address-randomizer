@@ -4,13 +4,14 @@
   "description": "An API that will generate a random, human readable address in JSON format",
   "main": "index.js",
   "scripts": {
+    "compile": "tsc",
     "test": "mocha",
     "tsoa:swagger": "tsoa swagger",
     "tsoa:routes": "Tsoa routes",
     "lint": "tslint --project .",
     "lint:fix": "tslint --project . --fix",
     "clean": "rm -rf dist",
-    "build": "npm run lint:fix && npm run tsoa:routes && npm run tsoa:swagger && tsc",
+    "build": "npm run lint:fix && npm run tsoa:routes && npm run tsoa:swagger && npm run compile && npm run test",
     "clean:build": "npm run clean && npm run build",
     "build:clean": "npm run clean && npm run build"
   },

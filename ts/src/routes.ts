@@ -35,7 +35,7 @@ export function RegisterRoutes(app: express.Express) {
     //  NOTE: If you do not see routes for all of your controllers in this file, then you might not have informed tsoa of where to look
     //      Please look into the "controllerPathGlobs" config option described in the readme: https://github.com/lukeautry/tsoa
     // ###########################################################################################################
-    app.get('/api/v1/randomizer/address',
+    app.get('/randomizer/address',
         function(request: any, response: any, next: any) {
             const args = {
                 country: { "in": "query", "name": "country", "dataType": "enum", "enums": ["CAN", "MEX", "NLD", "USA"] },
