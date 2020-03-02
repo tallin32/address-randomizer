@@ -18,7 +18,11 @@ export class FakerService extends ServiceBase {
         const country: Alpha3 = (!!_country) ? _country : this.getRandomCountryCode();
         const cntry = FakerService.SUPPORTED_COUNTRIES.filter(c => c.code === country) as Country[];
         if (cntry.length === 0) {
-            throw new Error("Undiscovered country");
+            const err = {
+                message: "Invalid country specified",
+                statusCode: 500
+            };
+            throw "Invalid country";
         }
         if (cntry.length > 1) {
             throw new Error("Ambiguous country - should not even happen!");
