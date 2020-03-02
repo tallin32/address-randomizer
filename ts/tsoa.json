@@ -1,7 +1,7 @@
 {
     "swagger": {
         "basePath": "/api/v1",
-        "entryFile": "./src/main.ts",
+        "entryFile": "./src/index.ts",
         "specVersion": 3,
         "outputDirectory": "./dist",
         "controllerPathGlobs": [
