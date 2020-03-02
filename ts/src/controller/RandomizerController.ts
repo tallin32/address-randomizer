@@ -11,13 +11,13 @@ export class RandomizerController {
         this._service = _svc ? _svc : container.resolve(ServiceBase);
     }
     private _service: ServiceBase;
-    @Get("address") 
+    @Get("address")
     public getAddress(@Query("country") country?: Alpha3): Address {
         try {
         return new FakerService().generateAddress(country);
         } catch (e) {
             e.statusCode = 500;
-            throw e;    
+            throw e;
         }
     }
 }

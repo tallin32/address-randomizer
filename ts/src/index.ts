@@ -1,12 +1,13 @@
 import "reflect-metadata";
 ;import express from 'express';
 import { RegisterRoutes } from "./routes";
-const swaggerUI = require("swagger-ui-express");
+import swaggerUI = require("swagger-ui-express");
+// tslint:disable-next-line
 const swaggerDocument = require("./swagger.json");
 const app = express();
 
 RegisterRoutes(app);
-app.use(function(err: any, req: express.Request, res: express.Response, next: any) {
+app.use((err: any, req: express.Request, res: express.Response, next: any) => {
     res.status(500).json(err);
 })
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));

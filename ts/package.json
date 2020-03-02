@@ -9,7 +9,7 @@
     "tsoa:routes": "Tsoa routes",
     "lint": "tslint --project .",
     "lint:fix": "tslint --project . --fix",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
     "build": "npm run lint:fix && npm run tsoa:routes && npm run tsoa:swagger && tsc",
     "clean:build": "npm run clean && npm run build",
     "build:clean": "npm run clean && npm run build"
@@ -49,6 +49,7 @@
     "@types/mocha": "^7.0.1",
     "@types/sinon": "^7.5.2",
     "@types/sinon-chai": "^3.2.3",
+    "@types/swagger-ui-express": "^4.1.1",
     "chai": "^4.2.0",
     "eslint": "^6.8.0",
     "mocha": "^7.1.0",

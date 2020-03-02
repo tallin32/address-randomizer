@@ -22,7 +22,7 @@ export class FakerService extends ServiceBase {
                 message: "Invalid country specified",
                 statusCode: 500
             };
-            throw "Invalid country";
+            throw new Error("Invalid country");
         }
         if (cntry.length > 1) {
             throw new Error("Ambiguous country - should not even happen!");

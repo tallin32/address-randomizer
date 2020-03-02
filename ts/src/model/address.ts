@@ -28,7 +28,7 @@ city: string;
  */
 county: string;
 /**
- * A division of a country; typically a first-level administrative division of a country and/or a geographical region.  |  
+ * A division of a country; typically a first-level administrative division of a country and/or a geographical region.  |
  */
 state: string;
 /**
@@ -45,4 +45,3 @@ country: string;
  */
 countryCode: string;
  }
- 
