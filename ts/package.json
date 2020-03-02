@@ -6,7 +6,13 @@
   "scripts": {
     "test": "mocha",
     "tsoa:swagger": "tsoa swagger",
-    "tsoa:routes": "Tsoa routes"
+    "tsoa:routes": "Tsoa routes",
+    "lint": "tslint --project .",
+    "lint:fix": "tslint --project . --fix",
+    "clean": "rm -rf dist"
+    "build": "npm run lint:fix && npm run tsoa:routes && npm run tsoa:swagger && tsc",
+    "clean:build": "npm run clean && npm run build",
+    "build:clean": "npm run clean && npm run build"
   },
   "repository": {
     "type": "git",
