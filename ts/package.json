@@ -31,7 +31,8 @@
     "express-openapi": "^6.0.0",
     "faker": "^4.1.0",
     "reflect-metadata": "^0.1.13",
-    "tsoa": "^2.5.13"
+    "tsoa": "^2.5.13",
+    "tsyringe": "^4.1.0"
   },
   "devDependencies": {
     "@types/chai": "^4.2.9",

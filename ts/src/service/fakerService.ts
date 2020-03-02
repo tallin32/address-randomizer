@@ -10,8 +10,10 @@ import { ServiceBase } from "./serviceBase";
 import { Address } from "../model/address";
 import faker from 'faker';
 import { SERVICE_BASE_IDENTIFIER } from "../constants/identifiers";
+import { injectable, inject } from "tsyringe";
 
-export class FakerService implements ServiceBase {
+@injectable()
+export class FakerService extends ServiceBase {
     public generateAddress(_country?: Alpha3): Address {
         const country: Alpha3 = (!!_country) ? _country : this.getRandomCountryCode();
         const cntry = FakerService.SUPPORTED_COUNTRIES.filter(c => c.code === country) as Country[];
