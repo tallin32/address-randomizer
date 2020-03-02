@@ -36,7 +36,6 @@ export class FakerService extends ServiceBase {
         } else {
             locale = locales[Math.floor(Math.random() * localesLen)];
         }
-        console.log(`Using locale: ${locale}`);
         // What I'm about to do is a bit unorthodox, but apparently the type definitions for Faker define "locale" as a read-only property, whereas the actual JavaScript
         // implementation define it as a read-write property.  So faker.setLocale() seems to be
         // something cooked up in the diseased imagination of the type library author or something.
