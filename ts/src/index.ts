@@ -1,10 +1,14 @@
 import "reflect-metadata";
 ;import express from 'express';
+import { container } from "tsyringe";
 import { RegisterRoutes } from "./routes";
+import { FakerService } from "./service/fakerService";
+
 import swaggerUI = require("swagger-ui-express");
 // tslint:disable-next-line
 const swaggerDocument = require("./swagger.json");
 const app = express();
+container.register("ServiceBase", FakerService);
 
 RegisterRoutes(app);
 app.use((err: any, req: express.Request, res: express.Response, next: any) => {

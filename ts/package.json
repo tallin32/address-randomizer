@@ -62,7 +62,7 @@
   },
   "mocha": {
     "spec": [
-      "./test/**/*.ts"
+      "./test/spec/**/*.ts"
     ],
     "require": "ts-node/register"
   }

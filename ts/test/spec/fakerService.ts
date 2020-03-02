@@ -2,8 +2,8 @@ import "reflect-metadata";
 import * as sinon from 'sinon';
 import * as sinonChai from "sinon-chai";
 import * as chai from "chai";
-import { FakerService } from "../src/service/fakerService";
-import { Address } from "../src/model/address";
+import { FakerService } from "../../src/service/fakerService";
+import { Address } from "../../src/model/address";
 const expect = chai.expect;
 const ADDRESS_KEYS = [ "house", "street", "postalCode", "city", "county", "state", "stateCode", "country", "countryCode" ];
 describe("faker service", function () {

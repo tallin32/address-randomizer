@@ -10,11 +10,11 @@ import { ServiceBase } from "./serviceBase";
 import { Address } from "../model/address";
 import faker from 'faker';
 import { SERVICE_BASE_IDENTIFIER } from "../constants/identifiers";
-import { injectable, inject } from "tsyringe";
+import { injectable, inject, container } from "tsyringe";
 
 @injectable()
-export class FakerService extends ServiceBase {
-    public generateAddress(_country?: Alpha3): Address {
+export class FakerService implements ServiceBase {
+ public generateAddress(_country?: Alpha3): Address {
         const country: Alpha3 = (!!_country) ? _country : this.getRandomCountryCode();
         const cntry = FakerService.SUPPORTED_COUNTRIES.filter(c => c.code === country) as Country[];
         if (cntry.length === 0) {
@@ -80,5 +80,9 @@ export class FakerService extends ServiceBase {
         const countryIndex = Math.floor(Math.random() * FakerService.SUPPORTED_COUNTRIES.length);
         return FakerService.SUPPORTED_COUNTRIES[countryIndex].code;
     }
-
 }
+
+// Oh hell should we even have to do this?
+// I thought this was what @injectable was supposed to do.
+
+container.register("ServiceBase", FakerService);
