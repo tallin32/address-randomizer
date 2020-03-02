@@ -9,8 +9,8 @@
         ]
     },
     "routes": {
-        "basePath": "/api/v1",
-        "entryFile": "./src/main.ts",
+        "basePath": "/",
+        "entryFile": "./src/index.ts",
         "routesDir": "./src",
         "middleware": "express"
     }
