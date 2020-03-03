@@ -11,9 +11,9 @@ export class RandomizerController {
     }
     private _service: ServiceBase;
     @Get("address")
-    public getAddress(@Query("country") country?: Alpha3): Address {
+    public async getAddress(@Query("country") country?: Alpha3): Promise<Address> {
         try {
-        return this._service.generateAddress(country);
+        return await this._service.generateAddress(country);
         } catch (e) {
             e.statusCode = 500;
             throw e;

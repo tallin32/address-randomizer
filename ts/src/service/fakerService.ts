@@ -14,7 +14,7 @@ import { injectable, inject, container } from "tsyringe";
 
 @injectable()
 export class FakerService implements ServiceBase {
- public generateAddress(_country?: Alpha3): Address {
+ public async generateAddress(_country?: Alpha3): Promise<Address> {
         const country: Alpha3 = (!!_country) ? _country : this.getRandomCountryCode();
         const cntry = FakerService.SUPPORTED_COUNTRIES.filter(c => c.code === country) as Country[];
         if (cntry.length === 0) {
@@ -51,7 +51,7 @@ export class FakerService implements ServiceBase {
             country: countryName,
             countryCode: country,
         };
-        return ret;
+        return Promise.resolve(ret);
     }
     private static /* final */ SUPPORTED_COUNTRIES: Country[] = [
         {

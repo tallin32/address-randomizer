@@ -13,14 +13,15 @@ describe("RandomizerController", function () {
         container.register("ServiceBase", FakeFakerService);
     });
 
-    it("Will refer to whatever service we inject into the DI container", function () {
+    it("Will refer to whatever service we inject into the DI container", async function () {
         const ctrl: RandomizerController = new RandomizerController();
-        expect(ctrl.getAddress()).to.deep.equal(FakeAddress);
+        expect(await ctrl.getAddress()).to.deep.equal(FakeAddress);
     });
 
-    it("will refer to a provider we provide as a constructor argument", function () {
+    it("will refer to a provider we provide as a constructor argument", async function () {
         container.reset();
         const ctrl: RandomizerController = new RandomizerController(new FakeFakerService());
-        expect(ctrl.getAddress()).to.deep.equal(FakeAddress);
+        return Promise.resolve();
+        expect(await ctrl.getAddress()).to.deep.equal(FakeAddress);
     })
 })

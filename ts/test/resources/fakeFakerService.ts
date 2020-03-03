@@ -16,7 +16,7 @@ export const FakeAddress: Address =         {
 
 @injectable()
 export class FakeFakerService implements ServiceBase {
-    public generateAddress(country?: Alpha3): Address {
-        return FakeAddress;
+    public async generateAddress(country?: Alpha3): Promise<Address> {
+        return Promise.resolve(FakeAddress);
     }
 }

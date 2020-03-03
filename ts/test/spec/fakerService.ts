@@ -7,23 +7,24 @@ import { Address } from "../../src/model/address";
 const expect = chai.expect;
 const ADDRESS_KEYS = [ "house", "street", "postalCode", "city", "county", "state", "stateCode", "country", "countryCode" ];
 describe("faker service", function () {
-    it("throws an error if it receives an incorrect country", function () {
+    it("throws an error if it receives an incorrect country", async function (done) {
         let fserv = new FakerService();
         const func = fserv.generateAddress.bind(fserv);
         expect(func.call("QQQ")).to.throw;
+        done();
     });
 
-    it("returns a valid address if called without a country", function () {
+    it("returns a valid address if called without a country", async function () {
         const fserv = new FakerService();
-        const addr: Address = fserv.generateAddress();
+        const addr: Address = await fserv.generateAddress();
         ADDRESS_KEYS.forEach((k: string) => {
             expect((addr as any)[k]).to.not.be.undefined;
         });
     });
 
-    it("returns a complete address when called with a country, where the country is set to the expected value", function () {
+    it("returns a complete address when called with a country, where the country is set to the expected value", async function () {
         const fserv = new FakerService();
-        const addr: Address = fserv.generateAddress("USA");
+        const addr: Address = await fserv.generateAddress("USA");
         expect(addr.country).to.equal("United States");
         expect(addr.countryCode).to.equal("USA");
         ADDRESS_KEYS.forEach((k: string) => {
