@@ -35,7 +35,7 @@
   },
   "homepage": "https://github.com/tallin32/address-randomizer#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-openapi": "^6.0.0",
     "faker": "^4.1.0",
     "reflect-metadata": "^0.1.13",
